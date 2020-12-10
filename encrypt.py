@@ -20,8 +20,8 @@ def scegli_chiave(par=0):
         if ris2 == '1':
             key = Fernet.generate_key()
         elif ris2 == '0':
-            key1 = chiave_da_password(req('Insert the password',passwd=1))
-            key = chiave_da_password(req('Insert the password again',passwd=1))
+            key1 = chiave_da_password(req('Type the password',passwd=1))
+            key = chiave_da_password(req('Type the password again',passwd=1))
             if key != key1:
                 print('Passwords do not match!')
                 exit(0)
@@ -29,11 +29,11 @@ def scegli_chiave(par=0):
             print('Error')
             return '-1'
     if par == 1:
-        ris2 = req('Use 0 to use a password o 1 to insert a key')
+        ris2 = req('Use 0 to use a password o 1 to type a key')
         if ris2 == '1':
-            key = req('Insert the key')
+            key = req('Type the key')
         elif ris2 == '0':
-            key = chiave_da_password(req('Insert the password',passwd=1))
+            key = chiave_da_password(req('Type the password',passwd=1))
         else:
             print('Error')
             return '-1'
